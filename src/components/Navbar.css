@@ -1,0 +1,21 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+}
+
+.left {
+  font-weight: bold;
+}
+
+.right {
+  display: flex;
+  gap: 12px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
