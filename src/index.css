@@ -51,13 +51,11 @@ button {
   justify-content: center;
   gap: 6px;
 }
-
 button:hover {
   transform: translateY(-1px);
   border-color: #444;
   background: #222;
 }
-
 button:disabled,
 button.disabled {
   opacity: 0.5;
@@ -84,24 +82,16 @@ input {
 
   transition: all 0.15s ease;
 }
-
 input:focus {
   border-color: #444;
   background: #fff2c1;
 }
-
 input::placeholder {
   color: #666;
 }
-
 input:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-}
-
-.subtitle {
-  margin-top: 12px;
-  opacity: 0.7;
 }
 
 .actions {
@@ -110,4 +100,9 @@ input:disabled {
   gap: 12px;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.subtitle {
+  margin-top: 12px;
+  opacity: 0.7;
 }

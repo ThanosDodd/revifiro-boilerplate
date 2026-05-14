@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { onAuthStateChanged } from "firebase/auth";
 
+import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 
 import "./Navbar.css";

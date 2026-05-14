@@ -44,10 +44,7 @@ export default function Login() {
   }
 
   return (
-    <div
-      className="page"
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
+    <div className="page centerSomething">
       <h1>Login</h1>
 
       <input
@@ -68,14 +65,13 @@ export default function Login() {
 
       <br />
       <div style={{ display: "flex", gap: "10px" }}>
-
-      <button onClick={handleLogin} disabled={loading}>
-        {loading ? "Logging in..." : "Login"}
-      </button>
-
-      <button onClick={handleSignup} disabled={loading}>
-        {loading ? "Creating account..." : "Sign Up"}
-      </button> </div>
+        <button onClick={handleLogin} disabled={loading}>
+          {loading ? "Logging in..." : "Login"}
+        </button>
+        <button onClick={handleSignup} disabled={loading}>
+          {loading ? "Creating account..." : "Sign Up"}
+        </button>{" "}
+      </div>
     </div>
   );
 }
