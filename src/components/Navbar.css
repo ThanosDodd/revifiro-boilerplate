@@ -1,8 +1,8 @@
 .nav {
+  background: #171717f2;
   display: flex;
   justify-content: space-between;
   padding: 12px 20px;
-  border-bottom: 1px solid #ddd;
   align-items: center;
 }
 
@@ -17,5 +17,4 @@
 
 .link {
   text-decoration: none;
-  color: black;
 }
