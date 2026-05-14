@@ -1,0 +1,9 @@
+.page {
+  padding: 1rem;
+}
+
+.dashboard-link {
+  color: rgb(40, 131, 6);
+  text-decoration: underline;
+  cursor: pointer;
+}

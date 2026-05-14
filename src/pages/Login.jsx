@@ -7,34 +7,47 @@ import { useNavigate } from "react-router-dom";
 
 import { auth } from "../firebase/firebase";
 
+import "./Pages.css";
+
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
   async function handleSignup() {
+    setLoading(true);
+
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       alert("Account created");
       navigate("/dashboard");
     } catch (error) {
       alert(error.message);
+    } finally {
+      setLoading(false);
     }
   }
 
   async function handleLogin() {
+    setLoading(true);
+
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      // alert("Logged in");
       navigate("/dashboard");
     } catch (error) {
       alert(error.message);
+    } finally {
+      setLoading(false);
     }
   }
 
   return (
-    <div>
+    <div
+      className="page"
+      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
       <h1>Login</h1>
 
       <input
@@ -54,10 +67,15 @@ export default function Login() {
       />
 
       <br />
+      <div style={{ display: "flex", gap: "10px" }}>
 
-      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleLogin} disabled={loading}>
+        {loading ? "Logging in..." : "Login"}
+      </button>
 
-      <button onClick={handleSignup}>Sign Up</button>
+      <button onClick={handleSignup} disabled={loading}>
+        {loading ? "Creating account..." : "Sign Up"}
+      </button> </div>
     </div>
   );
 }
