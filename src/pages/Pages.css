@@ -1,5 +1,6 @@
 .page {
   padding: 1rem;
+  min-height: 80vh;
 }
 
 .dashboard-link {
