@@ -10,12 +10,6 @@ export default function Home() {
       <p className="subtitle">
         A simple personal tool built with React + Firebase.
       </p>
-
-      <div className="actions">
-        <Link to="/login">
-          <button className="primary">Get Started</button>
-        </Link>
-      </div>
     </div>
   );
 }

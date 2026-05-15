@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
-import { auth } from "../firebase/firebase";
+import { auth, db } from "../firebase/firebase";
+import { doc, setDoc } from "firebase/firestore";
 
 import "./Pages.css";
 
@@ -16,14 +18,39 @@ export default function Login() {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        navigate("/dashboard");
+      }
+    });
+
+    return () => unsubscribe();
+  }, [navigate]);
+
   async function handleSignup() {
     setLoading(true);
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password,
+      );
+
+      const user = userCredential.user;
+
+      await setDoc(doc(db, "users", user.uid), {
+        email: user.email,
+        createdAt: new Date(),
+        isPremium: false,
+      });
+
       alert("Account created");
+
       navigate("/dashboard");
     } catch (error) {
+      console.error(error);
       alert(error.message);
     } finally {
       setLoading(false);

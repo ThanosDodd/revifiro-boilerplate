@@ -94,14 +94,6 @@ input:disabled {
   cursor: not-allowed;
 }
 
-.actions {
-  margin-top: 24px;
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 .footback {
   background-color: #253422;
   color: #fffcf2;
@@ -110,6 +102,18 @@ input:disabled {
 .navback {
   background-color: #403d39;
   color: #fffcf2;
+}
+
+.premium-card {
+  margin-top: 32px;
+  padding: 24px;
+
+  max-width: fit-content;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  background: #fffcf2;
 }
 
 .subtitle {
