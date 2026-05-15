@@ -18,7 +18,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="nav">
+    <nav className="nav navback">
       <div className="left">
         <Link to="/" className="link">
           APP

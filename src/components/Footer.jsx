@@ -4,7 +4,7 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
-    <footer className="foot">
+    <footer className="foot footback">
       <p>© {new Date().getFullYear()} MyApp. All rights reserved.</p>
       <p>
         Made with ❤️ by{" "}

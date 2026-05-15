@@ -1,6 +1,13 @@
-.foot{
-    text-align: center;
-    padding: 20px;
-    background: #171717f2;
-    color: white;
+a {
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #eb5e28;
+}
+
+.foot {
+  text-align: center;
+  padding: 20px;
 }
