@@ -7,9 +7,21 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <footer className="foot footback">
+      <Link to="/terms" className="link">
+        Terms and Conditions
+      </Link>
+      {" | "}
+      <Link to="/privacy" className="link">
+        Privacy Policy
+      </Link>
+
+      <br />
+      <br />
+
       <p>
         © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
       </p>
+
       <p>
         Made with ❤️ by{" "}
         <a
