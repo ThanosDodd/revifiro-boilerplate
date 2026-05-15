@@ -2,7 +2,6 @@ a {
   color: inherit;
   transition: color 0.2s ease;
 }
-
 a:hover {
   color: #eb5e28;
 }

@@ -2,7 +2,7 @@ const siteConfig = {
   creatorName: "Thanos Dodd",
 
   name: "Revifiro Boilerplate",
-  tagline: "A simple personal tool built with React + Firebase",
+  tagline: "Forget JS churn - only 5 dependencies.",
 
   links: {
     github: "https://github.com/thanosdodd",

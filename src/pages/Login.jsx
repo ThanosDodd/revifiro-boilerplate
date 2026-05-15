@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
+
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
-
-import { auth, db } from "../firebase/firebase";
 import { doc, setDoc } from "firebase/firestore";
+import { auth, db } from "../firebase/firebase";
+
+import { useNavigate } from "react-router-dom";
 
 import "./Pages.css";
 

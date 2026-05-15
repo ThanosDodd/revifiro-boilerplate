@@ -8,19 +8,13 @@
 .left {
   font-weight: bold;
 }
-
 .right {
   display: flex;
   gap: 12px;
 }
-
 .center {
   display: flex;
   gap: 16px;
-}
-
-.link {
-  text-decoration: none;
 }
 
 .logo {

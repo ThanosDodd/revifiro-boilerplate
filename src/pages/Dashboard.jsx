@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
+
 import { signOut } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
-
 import { auth, db } from "../firebase/firebase";
 
 import "./Pages.css";
