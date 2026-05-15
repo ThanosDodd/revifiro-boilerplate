@@ -8,6 +8,7 @@ import "./Navbar.css";
 
 export default function Navbar() {
   const [user, setUser] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -21,20 +22,58 @@ export default function Navbar() {
     <nav className="nav navback">
       <div className="left">
         <Link to="/" className="link">
-          APP
+          <img src="/appicon.png" alt="App logo" className="logo" />
         </Link>
       </div>
 
-      <div className="right">
-        {user ? (
-          <Link to="/dashboard" className="link">
-            Dashboard
-          </Link>
-        ) : (
-          <Link to="/login" className="link">
-            Login
-          </Link>
+      <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </button>
+
+      <div className={`menu ${menuOpen ? "open" : ""}`}>
+        {menuOpen && (
+          <button className="close-btn" onClick={() => setMenuOpen(false)}>
+            ✕
+          </button>
         )}
+
+        <div className="center">
+          <Link
+            to="/thing1"
+            className="link"
+            onClick={() => setMenuOpen(false)}
+          >
+            Thing 1
+          </Link>
+
+          <Link
+            to="/thing2"
+            className="link"
+            onClick={() => setMenuOpen(false)}
+          >
+            Thing 2
+          </Link>
+        </div>
+
+        <div className="right">
+          {user ? (
+            <Link
+              to="/dashboard"
+              className="link"
+              onClick={() => setMenuOpen(false)}
+            >
+              Dashboard
+            </Link>
+          ) : (
+            <Link
+              to="/login"
+              className="link"
+              onClick={() => setMenuOpen(false)}
+            >
+              Login
+            </Link>
+          )}
+        </div>
       </div>
     </nav>
   );

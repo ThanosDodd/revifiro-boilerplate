@@ -8,6 +8,8 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import Thing1 from "./pages/Thing1";
+import Thing2 from "./pages/Thing2";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="/thing1" element={<Thing1 />} />
+        <Route path="/thing2" element={<Thing2 />} />
       </Routes>
 
       <Footer />

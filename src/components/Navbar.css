@@ -14,6 +14,77 @@
   gap: 12px;
 }
 
+.center {
+  display: flex;
+  gap: 16px;
+}
+
 .link {
   text-decoration: none;
+}
+
+.logo {
+  height: 82px;
+}
+
+/* default desktop */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* hamburger hidden on desktop */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    flex-direction: column;
+    gap: 16px;
+
+    padding: 16px;
+    background: var(--text);
+    border-top: 1px solid var(--border);
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .center,
+  .right {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.close-btn {
+  align-self: flex-end;
+
+  background: none;
+  border: none;
+
+  font-size: 24px;
+  cursor: pointer;
+
+  color: inherit;
+  padding: 4px 8px;
 }
