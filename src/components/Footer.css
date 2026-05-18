@@ -1,12 +1,13 @@
-a {
-  color: inherit;
-  transition: color 0.2s ease;
-}
-a:hover {
-  color: #eb5e28;
-}
-
 .foot {
   text-align: center;
   padding: 20px;
 }
+
+.footer-a-tag {
+  color: inherit;
+  transition: color 0.2s ease;
+}
+.footer-a-tag:hover {
+  color: #eb5e28;
+}
+

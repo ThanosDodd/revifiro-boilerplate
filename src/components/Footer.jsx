@@ -7,11 +7,11 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <footer className="foot footback">
-      <Link to="/terms" className="link">
+      <Link to="/terms" className="footer-a-tag">
         Terms and Conditions
       </Link>
       {" | "}
-      <Link to="/privacy" className="link">
+      <Link to="/privacy" className="footer-a-tag">
         Privacy Policy
       </Link>
 
@@ -28,6 +28,7 @@ export default function Footer() {
           href={siteConfig.links.website}
           target="_blank"
           rel="noopener noreferrer"
+          className="footer-a-tag"
         >
           {siteConfig.creatorName}
         </a>

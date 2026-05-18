@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import { onAuthStateChanged } from "firebase/auth";
@@ -7,16 +7,23 @@ import { auth } from "../firebase/firebase";
 import "./Navbar.css";
 
 export default function Navbar() {
-  const [user, setUser] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false);
     });
 
     return () => unsubscribe();
   }, []);
+
+  if (loading) {
+    return null;
+  }
 
   return (
     <nav className="nav navback">
